@@ -174,3 +174,8 @@ volatile 的读性能消耗与普通变量几乎相同，但是写操作稍慢�
 
 2. 性能方面，synchronized关键字是防止多个线程同时执行一段代码，就会影响程序执行效率，而volatile关键字在某些情况下性能要优于synchronized。
    但是要注意volatile关键字是无法替代synchronized关键字的，因为volatile关键字无法保证操作的原子性。
+### 三、线程间通讯
+1. wait、notify方法
+   1. 因为涉及到对象锁,他们必须都放在synchronized中来使用. Wait、Notify一定要在synchronized里面进行使用。
+   2. Wait必须暂定当前正在执行的线程,并释放资源锁,让其他线程可以有机会运行
+   3. notify/notifyall: 唤醒因锁池中的线程,使之运行
