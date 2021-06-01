@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class Test08 {
     public static void main(String[] args) {
+        // 目的：保证所有真正的线程都能被实际的用到  核心线程数：实际运行的线程 最大线程数：可以创建多少个线程
         // 核心线程数1，最大创建2个线程 keepAliveTime 线程空闲时间
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(1, 2,
                 0L, TimeUnit.MILLISECONDS,
